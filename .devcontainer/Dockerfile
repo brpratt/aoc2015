@@ -1,11 +1,8 @@
-FROM debian:11.6
+FROM python:3.11
 
 ARG PACKAGE_LIST="\
-    binutils \
-    gcc \
     git \
     less \
-    libc-dev \
     locales \
     make \
     man-db \

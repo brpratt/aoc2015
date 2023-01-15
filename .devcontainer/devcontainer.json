@@ -5,6 +5,7 @@
     },
     "remoteUser": "elf",
     "extensions": [
-        "ms-vscode.cpptools"
-    ]
+        "ms-python.python"
+    ],
+    "postCreateCommand": "pip install --user -r requirements.txt; echo export PATH=\"$HOME/.local/bin:$PATH\" >> $HOME/.bashrc"
 }
