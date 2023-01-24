@@ -2,8 +2,6 @@
     "editor.formatOnSave": true,
     "python.formatting.provider": "black",
     "python.analysis.extraPaths": [
-        "./day01",
-        "./day02",
-        "./day03"
+        "./src"
     ]
 }

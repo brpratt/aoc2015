@@ -1,33 +1,23 @@
 .PHONY: test
-test: \
-	day01_test
+test: format check
+	python -m unittest discover -s src -p '*_test.py'
 
-.PHONY: day01_test
-day01_test:
-	black -q day01
-	mypy day01
-	python day01/day01_test.py
+.PHONY: format
+format:
+	black -q src
+
+.PHONY: check
+check:
+	mypy src
 
 .PHONY: day01
 day01:
-	@python ./day01/day01.py ./day01/input.txt
-
-.PHONY: day02_test
-day02_test:
-	black -q day02
-	mypy day02
-	python day02/day02_test.py
+	@python ./src/day01.py ./inputs/day01.txt
 
 .PHONY: day02
 day02:
-	@python ./day02/day02.py ./day02/input.txt
-
-.PHONY: day03_test
-day03_test:
-	black -q day03
-	mypy day03
-	python day03/day03_test.py
+	@python ./src/day02.py ./inputs/day02.txt
 
 .PHONY: day03
 day03:
-	@python ./day03/day03.py ./day03/input.txt
+	@python ./src/day03.py ./inputs/day03.txt

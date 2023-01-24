@@ -4,7 +4,7 @@ import day02
 
 
 class TestDay02(unittest.TestCase):
-    def test_solve_part_1(self):
+    def test_solve_part_1(self) -> None:
         tests: list[tuple[Iterable[str], int]] = [
             (["2x3x4\n"], 58),
             (["1x1x10\n"], 43),
@@ -14,7 +14,7 @@ class TestDay02(unittest.TestCase):
         for (dims, expected) in tests:
             self.assertEqual(day02.solve_part_1(dims), expected)
 
-    def test_solve_part_2(self):
+    def test_solve_part_2(self) -> None:
         tests: list[tuple[Iterable[str], int]] = [
             (["2x3x4\n"], 34),
             (["1x1x10\n"], 14),
@@ -24,8 +24,8 @@ class TestDay02(unittest.TestCase):
         for (dims, expected) in tests:
             self.assertEqual(day02.solve_part_2(dims), expected)
 
-    def test_answers(self):
-        with open("day02/input.txt", "r") as f:
+    def test_answers(self) -> None:
+        with open("inputs/day02.txt", "r") as f:
             lines = f.readlines()
             self.assertEqual(day02.solve_part_1(lines), 1586300)
             self.assertEqual(day02.solve_part_2(lines), 3737498)
