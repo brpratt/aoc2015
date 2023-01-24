@@ -21,3 +21,13 @@ day02_test:
 .PHONY: day02
 day02:
 	@python ./day02/day02.py ./day02/input.txt
+
+.PHONY: day03_test
+day03_test:
+	black -q day03
+	mypy day03
+	python day03/day03_test.py
+
+.PHONY: day03
+day03:
+	@python ./day03/day03.py ./day03/input.txt
