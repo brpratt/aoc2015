@@ -12,7 +12,7 @@ ARG PACKAGE_LIST="\
     procps \
     sudo \
     vim \
-"
+    "
 
 # Install base packages
 RUN apt-get update \
