@@ -25,7 +25,7 @@ class TestDay05(unittest.TestCase):
         ]
 
         for (line, expected) in tests:
-            self.assertEqual(day05.solve_part_2([line]), expected, line)
+            self.assertEqual(day05.solve_part_2([line]), expected)
 
     def test_answers(self) -> None:
         with open("inputs/day05.txt", "r") as f:

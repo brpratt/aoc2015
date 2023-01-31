@@ -29,3 +29,7 @@ day04:
 .PHONY: day05
 day05:
 	@python ./src/day05.py ./inputs/day05.txt
+
+.PHONY: day06
+day06:
+	@python ./src/day06.py ./inputs/day06.txt
