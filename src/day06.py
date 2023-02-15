@@ -43,10 +43,10 @@ def parse(line: str) -> Instruction:
 class Grid:
     lights: list[list[int]]
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.lights = [[0] * 1000 for _ in range(1000)]
 
-    def do(self, instruction: Instruction):
+    def do(self, instruction: Instruction) -> None:
         match instruction.type:
             case InstructionType.TURN_ON:
                 self._turn_on(instruction.start, instruction.stop)
@@ -55,17 +55,17 @@ class Grid:
             case InstructionType.TOGGLE:
                 self._toggle(instruction.start, instruction.stop)
 
-    def _turn_on(self, start: Point, stop: Point):
+    def _turn_on(self, start: Point, stop: Point) -> None:
         for y in range(start.y, stop.y + 1):
             for x in range(start.x, stop.x + 1):
                 self.lights[y][x] = 1
 
-    def _turn_off(self, start: Point, stop: Point):
+    def _turn_off(self, start: Point, stop: Point) -> None:
         for y in range(start.y, stop.y + 1):
             for x in range(start.x, stop.x + 1):
                 self.lights[y][x] = 0
 
-    def _toggle(self, start: Point, stop: Point):
+    def _toggle(self, start: Point, stop: Point) -> None:
         for y in range(start.y, stop.y + 1):
             for x in range(start.x, stop.x + 1):
                 self.lights[y][x] = 1 - self.lights[y][x]
@@ -88,10 +88,10 @@ def solve_part_1(lines: list[str]) -> int:
 class Grid2:
     lights: list[list[int]]
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.lights = [[0] * 1000 for _ in range(1000)]
 
-    def do(self, instruction: Instruction):
+    def do(self, instruction: Instruction) -> None:
         match instruction.type:
             case InstructionType.TURN_ON:
                 self._turn_on(instruction.start, instruction.stop)
@@ -100,18 +100,18 @@ class Grid2:
             case InstructionType.TOGGLE:
                 self._toggle(instruction.start, instruction.stop)
 
-    def _turn_on(self, start: Point, stop: Point):
+    def _turn_on(self, start: Point, stop: Point) -> None:
         for y in range(start.y, stop.y + 1):
             for x in range(start.x, stop.x + 1):
                 self.lights[y][x] += 1
 
-    def _turn_off(self, start: Point, stop: Point):
+    def _turn_off(self, start: Point, stop: Point) -> None:
         for y in range(start.y, stop.y + 1):
             for x in range(start.x, stop.x + 1):
                 if self.lights[y][x] > 0:
                     self.lights[y][x] -= 1
 
-    def _toggle(self, start: Point, stop: Point):
+    def _toggle(self, start: Point, stop: Point) -> None:
         for y in range(start.y, stop.y + 1):
             for x in range(start.x, stop.x + 1):
                 self.lights[y][x] += 2

@@ -1,14 +1,14 @@
 .PHONY: test
-test: format check
+test: fmt check
 	python -m unittest discover -s src -p '*_test.py'
 
-.PHONY: format
-format:
+.PHONY: fmt
+fmt:
 	black -q src
 
 .PHONY: check
 check:
-	mypy src
+	mypy --strict src
 
 .PHONY: day01
 day01:

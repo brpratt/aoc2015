@@ -44,11 +44,11 @@ class Circuit:
     connections: dict[Wire, Connection]
     signals: dict[Wire, int]
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.connections = {}
         self.signals = {}
 
-    def add_connection(self, connection: Connection):
+    def add_connection(self, connection: Connection) -> None:
         self.connections[connection.out] = connection
 
     def _signal(self, w: str) -> int:
