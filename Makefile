@@ -37,3 +37,7 @@ day06:
 .PHONY: day07
 day07:
 	@python ./src/day07.py ./inputs/day07.txt
+
+.PHONY: day08
+day08:
+	@python ./src/day08.py ./inputs/day08.txt
